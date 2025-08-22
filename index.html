@@ -274,16 +274,26 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-            justify-content: center;
+            grid-template-columns: 1fr 1fr; /* 2 columnas fijas en PC */
+            grid-template-rows: auto auto;  /* 2 filas */
+            gap: 30px 40px;
+            justify-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto 0 auto;
         }
 
         @media (min-width: 1200px) {
             .cards-grid {
-                grid-template-columns: repeat(3, minmax(300px, 1fr));
-            }
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columnas fijas en PC */
+            grid-template-rows: auto auto;  /* 2 filas */
+            gap: 30px 40px;
+            justify-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto 0 auto;
+        }
         }
 
         .feature-card {
@@ -406,9 +416,15 @@
             }
 
             .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columnas fijas en PC */
+            grid-template-rows: auto auto;  /* 2 filas */
+            gap: 30px 40px;
+            justify-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto 0 auto;
+        }
 
             .user-info {
                 gap: 10px;
@@ -555,10 +571,6 @@
                         <span class="icon">📊</span>
                         <span class="text">Datos de Partes</span>
                     </a></li>
-                    <li><a onclick="loadPage('https://defensoria6.github.io/proteccion-personas/', 'Protección de Personas')">
-                        <span class="icon">🛡️</span>
-                        <span class="text">Protección de Personas</span>
-                    </a></li>
                     <li><a onclick="loadPage('https://defensoria6.github.io/registro-causas/', 'Registro de Causas')">
                         <span class="icon">📋</span>
                         <span class="text">Registro de Causas</span>
@@ -585,12 +597,6 @@
                         <div class="feature-card" onclick="loadPage('https://defensoria6.github.io/datospartes/', 'Datos de Partes')">
                             <h3>📊 Datos de Partes</h3>
                             <p>Gestiona y consulta información detallada sobre las partes involucradas en los procesos legales.</p>
-                            <a class="btn-link">Acceder</a>
-                        </div>
-
-                        <div class="feature-card" onclick="loadPage('https://defensoria6.github.io/proteccion-personas/', 'Protección de Personas')">
-                            <h3>🛡️ Protección de Personas</h3>
-                            <p>Sistema especializado para la protección y seguimiento de personas en situación de vulnerabilidad.</p>
                             <a class="btn-link">Acceder</a>
                         </div>
 
@@ -887,4 +893,3 @@
     </script>
 </body>
 </html>
-
