@@ -617,9 +617,19 @@ Rómulo Fioravante.Leg2481.Año 2025</div>
                         <span class="icon">📅</span>
                         <span class="text">Calendario</span>
                     </a></li>
+                    <!-- Botón Dictámenes Firmados añadido -->
+                    <li><a onclick="loadIframe('https://defensorialocal-seis.github.io/dictamen/', 'Dictámenes Firmados')">
+                        <span class="icon">📝</span>
+                        <span class="text">Dictámenes Firmados</span>
+                    </a></li>
                     <li><a onclick="loadPage('https://defensoria6.github.io/documentos/', 'Documentos')">
                         <span class="icon">📄</span>
                         <span class="text">Documentos</span>
+                    </a></li>
+                    <!-- Nuevo botón Directorio añadido -->
+                    <li><a onclick="loadIframe('https://defensoria6.github.io/organismos-proteccion/', 'Directorio')">
+                        <span class="icon">🏛️</span>
+                        <span class="text">Directorio</span>
                     </a></li>
                 </ul>
             </aside>
@@ -650,9 +660,23 @@ Rómulo Fioravante.Leg2481.Año 2025</div>
                             <a class="btn-link">Acceder</a>
                         </div>
 
+                        <!-- Nueva tarjeta para Dictámenes Firmados -->
+                        <div class="feature-card" onclick="loadIframe('https://defensorialocal-seis.github.io/dictamen/', 'Dictámenes Firmados')">
+                            <h3>📝 Dictámenes Firmados</h3>
+                            <p>Accede al sistema de dictámenes firmados para gestionar y consultar documentos oficiales.</p>
+                            <a class="btn-link">Acceder</a>
+                        </div>
+
                         <div class="feature-card" onclick="loadPage('https://defensoria6.github.io/documentos/', 'Documentos')">
                             <h3>📄 Documentos</h3>
                             <p>Gestiona, almacena y organiza todos los documentos legales y administrativos.</p>
+                            <a class="btn-link">Acceder</a>
+                        </div>
+
+                        <!-- Nueva tarjeta para Directorio -->
+                        <div class="feature-card" onclick="loadIframe('https://defensoria6.github.io/organismos-proteccion/', 'Directorio')">
+                            <h3>🏛️ Directorio</h3>
+                            <p>Accede al directorio de organismos de protección para consultar información relevante.</p>
                             <a class="btn-link">Acceder</a>
                         </div>
                     </div>
@@ -890,6 +914,25 @@ Rómulo Fioravante.Leg2481.Año 2025</div>
             if (window.innerWidth <= 768) {
                 document.getElementById('sidebar').classList.remove('show');
             }
+        }
+
+        // Función para cargar iframe (para Dictámenes Firmados y Directorio)
+        function loadIframe(url, title) {
+            // Oculta la pantalla de bienvenida
+            const welcome = document.getElementById("welcomeScreen");
+            if (welcome) welcome.style.display = "none";
+
+            // Muestra el contenedor del iframe
+            const iframeContainer = document.getElementById("iframeContainer");
+            iframeContainer.style.display = "block";
+
+            // Cambia el título que aparece arriba del iframe
+            const iframeTitle = document.getElementById("iframeTitle");
+            if (iframeTitle) iframeTitle.textContent = title;
+
+            // Carga la URL en el iframe
+            const iframe = document.getElementById("contentIframe");
+            iframe.src = url;
         }
 
         function closeIframe() {
